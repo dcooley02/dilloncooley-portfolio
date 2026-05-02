@@ -2,10 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thesis | Dillon Cooley</title>
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
-        embed { width: 100%; height: 100vh; border: none; }
+        /* This CSS ensures the PDF fills the entire browser window without scrollbars */
+        body, html { 
+            margin: 0; 
+            padding: 0; 
+            height: 100%; 
+            width: 100%;
+            overflow: hidden; 
+            background-color: #333; /* Dark background matches the Chrome PDF viewer */
+        }
+        embed { 
+            width: 100%; 
+            height: 100vh; 
+            border: none; 
+        }
     </style>
 </head>
 <body>
