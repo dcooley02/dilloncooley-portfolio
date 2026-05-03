@@ -61,11 +61,12 @@ ul li {
 }
 
 /* 6. The Image Grid */
-.photo-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-top: 20px;
+.photo-grid img {
+    width: 100%;
+    height: 400px; /* This forces a uniform height */
+    object-fit: cover; /* This crops the images to fit the box without distortion */
+    border-radius: 2px;
+    display: block;
 }
 
 .photo-grid img {
