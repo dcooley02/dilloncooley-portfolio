@@ -145,3 +145,39 @@ ul li {
 body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+/* --- Connect Section Visual Hierarchy --- */
+.connect-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Space between the "pills" */
+    margin-top: 20px;
+}
+
+.connect-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none !important;
+    border-bottom: none !important;
+    padding: 8px 16px;
+    border-radius: 20px; /* Gives it that modern "pill" look */
+    background: rgba(255, 255, 255, 0.08); /* Subtle highlight in dark mode */
+    transition: all 0.2s ease-in-out;
+    font-size: 0.9rem;
+}
+
+/* Light mode adjustments */
+body.light-mode .connect-item {
+    background: rgba(26, 29, 46, 0.05); /* Soft grey/navy in light mode */
+    color: #1a1d2e;
+}
+
+.connect-item:hover {
+    background: rgba(0, 168, 255, 0.15); /* Subtle blue glow on hover */
+    transform: translateY(-2px); /* Makes it feel "interactive" */
+}
+
+.connect-item svg {
+    stroke-width: 2px;
+}
