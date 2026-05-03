@@ -181,3 +181,27 @@ body.light-mode .connect-item {
 .connect-item svg {
     stroke-width: 2px;
 }
+
+.connect-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.connect-item {
+    flex: 1;               /* This makes all buttons the same width */
+    min-width: 120px;      /* Prevents them from getting too squished on mobile */
+    justify-content: center; /* Centers the icon/text inside the button */
+    
+    /* Keep your existing padding, background, etc. below this */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none !important;
+    border-bottom: none !important;
+    padding: 10px 16px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    transition: all 0.2s ease-in-out;
+}
