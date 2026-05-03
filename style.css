@@ -17,6 +17,27 @@ body.light-mode {
     color: #1a1d2e;
 }
 
+/* Update these sections to handle the light mode switch */
+
+body.light-mode a {
+    color: #1a1d2e; /* Matches your dark navy theme color */
+    border-bottom-color: rgba(26, 29, 46, 0.3);
+}
+
+body.light-mode a:hover {
+    color: #00a8ff; /* Keeps the blue accent on hover */
+    border-bottom-color: #00a8ff;
+}
+
+body.light-mode .research-meta {
+    color: rgba(26, 29, 46, 0.7); /* Darker text for the thesis date/info */
+}
+
+/* Ensure the HR lines are visible */
+body.light-mode hr {
+    border-top: 1px solid rgba(26, 29, 46, 0.2);
+}
+
 /* Centers the content and prevents it from getting too wide on desktop */
 .container {
     max-width: 900px;
