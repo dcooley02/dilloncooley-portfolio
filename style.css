@@ -14,7 +14,7 @@ body {
 /* Light Mode Override */
 body.light-mode {
     background-color: #ffffff;
-    color: ##1a1d2e;
+    color: #1a1d2e;
 }
 
 /* Centers the content and prevents it from getting too wide on desktop */
