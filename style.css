@@ -87,11 +87,16 @@ ul li {
 .photo-grid img {
     height: 350px;            /* Forces both photos to the same vertical height */
     width: auto;              /* Allows the width to be natural so nothing is cropped */
-    border
+    border-radius: 2px;       /* Subtle rounding on the corners */
+    display: block;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Adds depth */
+}
 
+/* Styling for the academic subtitle */
 .research-meta {
-    font-size: 0.85rem;           /* Slightly smaller than main text */
-    color: rgba(255, 255, 255, 0.6); /* Slightly faded white for hierarchy */
-    margin-top: -5px;             /* Pulls it closer to the link above it */
-    font-style: italic;           /* Optional: gives it a distinct academic look */
+    font-size: 0.85rem;           
+    color: rgba(255, 255, 255, 0.6); 
+    margin-top: -10px;            
+    font-style: italic;           
+    display: block;               
 }
