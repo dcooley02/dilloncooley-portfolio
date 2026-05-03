@@ -127,3 +127,21 @@ ul li {
     font-style: italic;           
     display: block;               
 }
+
+/* --- 8. THEME TOGGLE ICONS --- */
+/* This ensures the simple SVG icons match the text color automatically */
+#theme-toggle svg {
+    stroke: currentColor;
+    transition: transform 0.3s ease;
+    display: block; /* Centers the icon in the button */
+    margin: auto;
+}
+
+#theme-toggle:hover svg {
+    transform: scale(1.1);
+}
+
+/* Optional: Smooth transition for the background/text colors */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
