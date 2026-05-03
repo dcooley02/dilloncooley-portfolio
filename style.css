@@ -1,8 +1,11 @@
-/* 1. The Canvas */
+/* 1. Import Open Sans from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+
+/* 2. Apply it to the Body */
 body {
-    background-color: #1a1d2e; /* The specific dark blue */
+    background-color: #1a1d2e;
     color: #ffffff;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif; /* This is the update */
     line-height: 1.6;
     margin: 0;
     padding: 60px 20px;
