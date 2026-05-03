@@ -70,8 +70,9 @@ ul li {
 
 .photo-grid img {
     width: 100%;
-    height: 400px; /* This forces a uniform height */
-    object-fit: cover; /* This crops the images to fit the box without distortion */
+    height: 300px; /* Reduced from 400px */
+    object-fit: cover;
+    object-position: center; /* Ensures the crop stays centered */
     border-radius: 2px;
     display: block;
 }
