@@ -1,61 +1,39 @@
-/* --- 1. FONTS & ROOT SETTINGS --- */
-/* Imports Open Sans from Google Fonts so it works on all devices */
+/* ==========================================
+   1. IMPORTS & BASE SETTINGS
+   ========================================== */
+/* Imports Open Sans from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
 
+/* Default Global Styles (Dark Mode) */
 body {
-    background-color: #1a1d2e; /* The dark navy theme */
-    color: #ffffff;            /* White text for high contrast */
+    background-color: #1a1d2e; /* Navy theme */
+    color: #ffffff;            
     font-family: 'Open Sans', sans-serif;
-    line-height: 1.6;          /* Increases space between lines for better readability */
+    line-height: 1.6;          /* Breathing room between text lines */
     margin: 0;
-    padding: 60px 20px;        /* Adds breathing room around the edges of the page */
+    padding: 60px 20px;        
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth toggle transition */
 }
 
-/* Light Mode Override */
-body.light-mode {
-    background-color: #ffffff;
-    color: #1a1d2e;
-}
-
-/* Update these sections to handle the light mode switch */
-
-body.light-mode a {
-    color: #1a1d2e; /* Matches your dark navy theme color */
-    border-bottom-color: rgba(26, 29, 46, 0.3);
-}
-
-body.light-mode a:hover {
-    color: #00a8ff; /* Keeps the blue accent on hover */
-    border-bottom-color: #00a8ff;
-}
-
-body.light-mode .research-meta {
-    color: rgba(26, 29, 46, 0.7); /* Darker text for the thesis date/info */
-}
-
-/* Ensure the HR lines are visible */
-body.light-mode hr {
-    border-top: 1px solid rgba(26, 29, 46, 0.2);
-}
-
-/* Centers the content and prevents it from getting too wide on desktop */
+/* Central container constraint */
 .container {
     max-width: 900px;
     margin: 0 auto;
 }
 
-/* --- 2. UNIFORM SPACING RESET --- */
-/* This ensures that the only thing creating large gaps is the white lines (hr) */
+/* Universal Spacing Reset */
 h1, h2, p, ul {
     margin-top: 0;
-    margin-bottom: 15px; /* Adds a consistent small gap below all text blocks */
+    margin-bottom: 15px; 
 }
 
-/* --- 3. HEADINGS --- */
+/* ==========================================
+   2. TYPOGRAPHY & dividers
+   ========================================== */
 h1 {
     font-size: 1.8rem;
     font-weight: 600;
-    margin-bottom: 0; /* Keeps the name close to the first divider */
+    margin-bottom: 0;
 }
 
 h2 {
@@ -65,61 +43,43 @@ h2 {
     display: block;
 }
 
-/* --- 4. THE MASTER SPACER (WHITE LINES) --- */
+/* Horizontal line spacer */
 hr {
     border: 0;
     border-top: 1px solid rgba(255, 255, 255, 0.8);
-    margin: 40px 0; /* Creates exactly 40px of space above and below every section */
+    margin: 40px 0; /* Ensures consistent 40px gap between sections */
 }
 
-/* --- 5. LINKS & INTERACTION --- */
+/* ==========================================
+   3. LINKS & LISTS
+   ========================================== */
 a {
     color: #ffffff;
-    text-decoration: none; /* Removes the standard clunky underline */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Adds a subtle custom underline */
-    transition: all 0.2s ease; /* Makes the color change smooth */
+    text-decoration: none; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Subtle custom underline */
+    transition: all 0.2s ease; 
 }
 
 a:hover {
-    color: #00a8ff; /* Changes to a "cockpit blue" when you hover over it */
+    color: #00a8ff; /* Cockpit blue hover state */
     border-bottom-color: #00a8ff;
     opacity: 1;
 }
 
-/* Styling for the small arrows if you choose to add them later */
-.link-icon {
-    font-size: 0.9rem;
-    margin-left: 5px;
-    vertical-align: middle;
-}
-
-/* --- 6. LISTS --- */
 ul {
-    list-style: none; /* Removes the default bullet points */
+    list-style: none; /* Removes default dots */
     padding: 0;
 }
 
 ul li {
-    margin-bottom: 12px; /* Adds space between each individual link */
+    margin-bottom: 12px;
 }
 
-/* --- 7. PHOTO GALLERY (FLEXBOX) --- */
-.photo-grid {
-    display: flex;            /* Arranges items in a row */
-    justify-content: center;  /* Centers the photos horizontally */
-    flex-wrap: wrap;          /* Allows photos to stack on top of each other on mobile */
-    gap: 20px;                /* Space between the two photos */
-}
-
-.photo-grid img {
-    height: 350px;            /* Forces both photos to the same vertical height */
-    width: auto;              /* Allows the width to be natural so nothing is cropped */
-    border-radius: 2px;       /* Subtle rounding on the corners */
-    display: block;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Adds depth */
-}
-
-/* Styling for the academic subtitle */
+/* ==========================================
+   4. COMPONENTS
+   ========================================== */
+   
+/* --- Academic Research Subtitle --- */
 .research-meta {
     font-size: 0.85rem;           
     color: rgba(255, 255, 255, 0.6); 
@@ -128,60 +88,7 @@ ul li {
     display: block;               
 }
 
-/* --- 8. THEME TOGGLE ICONS --- */
-/* This ensures the simple SVG icons match the text color automatically */
-#theme-toggle svg {
-    stroke: currentColor;
-    transition: transform 0.3s ease;
-    display: block; /* Centers the icon in the button */
-    margin: auto;
-}
-
-#theme-toggle:hover svg {
-    transform: scale(1.1);
-}
-
-/* Optional: Smooth transition for the background/text colors */
-body {
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* --- Connect Section Visual Hierarchy --- */
-.connect-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px; /* Space between the "pills" */
-    margin-top: 20px;
-}
-
-.connect-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none !important;
-    border-bottom: none !important;
-    padding: 8px 16px;
-    border-radius: 20px; /* Gives it that modern "pill" look */
-    background: rgba(255, 255, 255, 0.08); /* Subtle highlight in dark mode */
-    transition: all 0.2s ease-in-out;
-    font-size: 0.9rem;
-}
-
-/* Light mode adjustments */
-body.light-mode .connect-item {
-    background: rgba(26, 29, 46, 0.05); /* Soft grey/navy in light mode */
-    color: #1a1d2e;
-}
-
-.connect-item:hover {
-    background: rgba(0, 168, 255, 0.15); /* Subtle blue glow on hover */
-    transform: translateY(-2px); /* Makes it feel "interactive" */
-}
-
-.connect-item svg {
-    stroke-width: 2px;
-}
-
+/* --- Connect Section (Social Pills) --- */
 .connect-grid {
     display: flex;
     flex-wrap: wrap;
@@ -190,18 +97,98 @@ body.light-mode .connect-item {
 }
 
 .connect-item {
-    flex: 1;               /* This makes all buttons the same width */
-    min-width: 120px;      /* Prevents them from getting too squished on mobile */
-    justify-content: center; /* Centers the icon/text inside the button */
-    
-    /* Keep your existing padding, background, etc. below this */
+    flex: 1;               /* Forces buttons to share available width equally */
+    min-width: 120px;      /* Prevents squishing on mobile */
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 8px;
+    padding: 10px 16px;
+    border-radius: 20px;   /* Creates the 'pill' shape */
+    background: rgba(255, 255, 255, 0.08); /* Subtle highlight */
+    font-size: 0.9rem;
     text-decoration: none !important;
     border-bottom: none !important;
-    padding: 10px 16px;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.08);
     transition: all 0.2s ease-in-out;
+}
+
+.connect-item:hover {
+    background: rgba(0, 168, 255, 0.15); /* Subtle blue glow */
+    transform: translateY(-2px); /* Lift effect */
+}
+
+.connect-item svg {
+    stroke-width: 2px;
+}
+
+/* --- Photo Gallery --- */
+.photo-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;          /* Allows stacking on small screens */
+    gap: 20px;                
+}
+
+.photo-grid img {
+    height: 350px;            
+    width: auto;              
+    border-radius: 2px;       
+    display: block;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); 
+}
+
+/* --- Theme Toggle Button --- */
+#theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    padding: 0;
+}
+
+#theme-toggle svg {
+    stroke: currentColor;
+    transition: transform 0.3s ease;
+    display: block;
+    margin: auto;
+}
+
+#theme-toggle:hover svg {
+    transform: scale(1.1);
+}
+
+/* ==========================================
+   5. LIGHT MODE THEME OVERRIDES
+   ========================================== */
+/* These rules only apply when the 'light-mode' class is added to the body via Javascript */
+
+body.light-mode {
+    background-color: #ffffff;
+    color: #1a1d2e;
+}
+
+body.light-mode a {
+    color: #1a1d2e; 
+    border-bottom-color: rgba(26, 29, 46, 0.3);
+}
+
+body.light-mode a:hover {
+    color: #00a8ff; 
+    border-bottom-color: #00a8ff;
+}
+
+body.light-mode hr {
+    border-top: 1px solid rgba(26, 29, 46, 0.2);
+}
+
+body.light-mode .research-meta {
+    color: rgba(26, 29, 46, 0.7); 
+}
+
+body.light-mode .connect-item {
+    background: rgba(26, 29, 46, 0.05); /* Soft grey/navy background */
+    color: #1a1d2e;
 }
