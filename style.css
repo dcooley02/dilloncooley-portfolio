@@ -194,14 +194,14 @@ body.light-mode .connect-item {
 }
 
 /* Icon visibility for theme toggle */
-#moon-icon {
+#theme-toggle #moon-icon {
     display: none;
 }
 
-body.light-mode #sun-icon {
+body.light-mode #theme-toggle #sun-icon {
     display: none;
 }
 
-body.light-mode #moon-icon {
+body.light-mode #theme-toggle #moon-icon {
     display: block;
 }
