@@ -39,8 +39,6 @@ h1 {
 h2 {
     font-size: 1.2rem;
     font-weight: 600;
-    text-transform: none;
-    display: block;
 }
 
 /* Horizontal line spacer */
@@ -81,11 +79,10 @@ ul li {
    
 /* --- Academic Research Subtitle --- */
 .research-meta {
-    font-size: 0.85rem;           
-    color: rgba(255, 255, 255, 0.6); 
-    margin-top: -10px;            
-    font-style: italic;           
-    display: block;               
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: -10px;
+    font-style: italic;
 }
 
 /* --- Connect Section (Social Pills) --- */
@@ -163,33 +160,33 @@ ul li {
 /* ==========================================
    5. LIGHT MODE THEME OVERRIDES
    ========================================== */
-/* These rules only apply when the 'light-mode' class is added to the body via Javascript */
+/* These rules only apply when the 'light-mode' class is added to the html element via Javascript */
 
-body.light-mode {
+html.light-mode body {
     background-color: #ffffff;
     color: #1a1d2e;
 }
 
-body.light-mode a {
-    color: #1a1d2e; 
+html.light-mode a {
+    color: #1a1d2e;
     border-bottom-color: rgba(26, 29, 46, 0.3);
 }
 
-body.light-mode a:hover {
-    color: #00a8ff; 
+html.light-mode a:hover {
+    color: #00a8ff;
     border-bottom-color: #00a8ff;
 }
 
-body.light-mode hr {
+html.light-mode hr {
     border-top: 1px solid rgba(26, 29, 46, 0.2);
 }
 
-body.light-mode .research-meta {
-    color: rgba(26, 29, 46, 0.7); 
+html.light-mode .research-meta {
+    color: rgba(26, 29, 46, 0.7);
 }
 
-body.light-mode .connect-item {
-    background: rgba(26, 29, 46, 0.05); /* Soft grey/navy background */
+html.light-mode .connect-item {
+    background: rgba(26, 29, 46, 0.05);
     color: #1a1d2e;
 }
 
@@ -198,10 +195,10 @@ body.light-mode .connect-item {
     display: none;
 }
 
-body.light-mode #theme-toggle #sun-icon {
+html.light-mode #theme-toggle #sun-icon {
     display: none;
 }
 
-body.light-mode #theme-toggle #moon-icon {
+html.light-mode #theme-toggle #moon-icon {
     display: block;
 }

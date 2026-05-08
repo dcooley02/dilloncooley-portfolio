@@ -19,7 +19,17 @@
     <meta property="twitter:description" content="US Navy Lieutenant and Weapons and Tactics Instructor. Focused on the intersection of technology and military strategy.">
     <meta property="twitter:image" content="https://dilloncooley.us/assets/me.jpg">
 
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%2250%%22 y=%2265%%22 font-size=%2270%22 fill=%22white%22 font-family=%22sans-serif%22 font-weight=%22bold%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>DC</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2215%22 fill=%22%231a1d2e%22/><text x=%2250%%22 y=%2265%%22 font-size=%2270%22 fill=%22white%22 font-family=%22sans-serif%22 font-weight=%22bold%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>DC</text></svg>">
+
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme-preference');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (saved ? saved !== 'dark' : !prefersDark) {
+                document.documentElement.classList.add('light-mode');
+            }
+        })();
+    </script>
     <link rel="stylesheet" href="style.css">
 
     <script type="application/ld+json">
@@ -71,22 +81,22 @@
         <section class="connect">
             <h2>Digital Footprint</h2>
             <div class="connect-grid">
-                <a href="https://linkedin.com/in/dillon-cooley-627526123" aria-label="LinkedIn" class="connect-item">
+                <a href="https://linkedin.com/in/dillon-cooley-627526123" aria-label="LinkedIn" class="connect-item" target="_blank" rel="noopener noreferrer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                     <span>LinkedIn</span>
                 </a>
         
-                <a href="https://x.com/realdcool" aria-label="X (Twitter)" class="connect-item">
+                <a href="https://x.com/realdcool" aria-label="X (Twitter)" class="connect-item" target="_blank" rel="noopener noreferrer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
                     <span>X</span>
                 </a>
 
-                <a href="https://substack.com/@dilloncooley" aria-label="Substack" class="connect-item">
+                <a href="https://substack.com/@dilloncooley" aria-label="Substack" class="connect-item" target="_blank" rel="noopener noreferrer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 8H5V5h14v3zM19 11H5v3h14v-3zM5 19l7-3 7 3V17H5v2z"/></svg>
                     <span>Substack</span>
                 </a>
 
-                <a href="https://github.com/dcooley02" aria-label="GitHub" class="connect-item">
+                <a href="https://github.com/dcooley02" aria-label="GitHub" class="connect-item" target="_blank" rel="noopener noreferrer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
                     <span>GitHub</span>
                 </a>
@@ -112,34 +122,21 @@
 
     <script>
         const toggleBtn = document.getElementById('theme-toggle');
-        const body = document.body;
+        const root = document.documentElement;
         const THEME_KEY = 'theme-preference';
 
-        function initializeTheme() {
-            const savedTheme = localStorage.getItem(THEME_KEY);
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const isDarkMode = savedTheme ? savedTheme === 'dark' : prefersDark;
-
-            if (!isDarkMode) {
-                body.classList.add('light-mode');
-            }
-            updateAriaLabel();
-        }
-
         function toggleTheme() {
-            body.classList.toggle('light-mode');
-            const isDarkMode = !body.classList.contains('light-mode');
-            localStorage.setItem(THEME_KEY, isDarkMode ? 'dark' : 'light');
+            root.classList.toggle('light-mode');
+            localStorage.setItem(THEME_KEY, root.classList.contains('light-mode') ? 'light' : 'dark');
             updateAriaLabel();
         }
 
         function updateAriaLabel() {
-            const isLight = body.classList.contains('light-mode');
-            toggleBtn.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
+            toggleBtn.setAttribute('aria-label', root.classList.contains('light-mode') ? 'Switch to dark mode' : 'Switch to light mode');
         }
 
         toggleBtn.addEventListener('click', toggleTheme);
-        initializeTheme();
+        updateAriaLabel();
     </script>
 </body>
 </html>
