@@ -192,3 +192,16 @@ body.light-mode .connect-item {
     background: rgba(26, 29, 46, 0.05); /* Soft grey/navy background */
     color: #1a1d2e;
 }
+
+/* Icon visibility for theme toggle */
+#moon-icon {
+    display: none;
+}
+
+body.light-mode #sun-icon {
+    display: none;
+}
+
+body.light-mode #moon-icon {
+    display: block;
+}

@@ -112,21 +112,27 @@
 
     <script>
         const toggleBtn = document.getElementById('theme-toggle');
-        const sunIcon = document.getElementById('sun-icon');
-        const moonIcon = document.getElementById('moon-icon');
         const body = document.body;
+        const THEME_KEY = 'theme-preference';
 
-        toggleBtn.addEventListener('click', () => {
-            body.classList.toggle('light-mode');
-    
-            if (body.classList.contains('light-mode')) {
-                sunIcon.style.display = 'none';
-                moonIcon.style.display = 'block';
-            } else {
-                sunIcon.style.display = 'block';
-                moonIcon.style.display = 'none';
+        function initializeTheme() {
+            const savedTheme = localStorage.getItem(THEME_KEY);
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const isDarkMode = savedTheme ? savedTheme === 'dark' : prefersDark;
+
+            if (!isDarkMode) {
+                body.classList.add('light-mode');
             }
-        });
+        }
+
+        function toggleTheme() {
+            body.classList.toggle('light-mode');
+            const isDarkMode = !body.classList.contains('light-mode');
+            localStorage.setItem(THEME_KEY, isDarkMode ? 'dark' : 'light');
+        }
+
+        toggleBtn.addEventListener('click', toggleTheme);
+        initializeTheme();
     </script>
 </body>
 </html>
