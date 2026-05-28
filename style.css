@@ -2,7 +2,7 @@
    1. IMPORTS & BASE SETTINGS
    ========================================== */
 /* Imports Open Sans from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 
 /* Default Global Styles (Dark Mode) */
 body {
@@ -49,28 +49,21 @@ hr {
 }
 
 /* ==========================================
-   3. LINKS & LISTS
+   3. LINKS
    ========================================== */
 a {
     color: #ffffff;
-    text-decoration: none; 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Subtle custom underline */
-    transition: all 0.2s ease; 
+    text-decoration: none;
+    transition: color 0.2s ease, border-bottom-color 0.2s ease;
+}
+
+a:not(.connect-item) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 a:hover {
-    color: #00a8ff; /* Cockpit blue hover state */
+    color: #00a8ff;
     border-bottom-color: #00a8ff;
-    opacity: 1;
-}
-
-ul {
-    list-style: none; /* Removes default dots */
-    padding: 0;
-}
-
-ul li {
-    margin-bottom: 12px;
 }
 
 /* ==========================================
@@ -94,19 +87,17 @@ ul li {
 }
 
 .connect-item {
-    flex: 1;               /* Forces buttons to share available width equally */
-    min-width: 120px;      /* Prevents squishing on mobile */
+    flex: 1;
+    min-width: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 8px;
     padding: 10px 16px;
-    border-radius: 20px;   /* Creates the 'pill' shape */
-    background: rgba(255, 255, 255, 0.08); /* Subtle highlight */
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.08);
     font-size: 0.9rem;
-    text-decoration: none !important;
-    border-bottom: none !important;
-    transition: all 0.2s ease-in-out;
+    transition: background 0.2s ease-in-out, transform 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .connect-item:hover {
@@ -147,7 +138,6 @@ ul li {
 }
 
 #theme-toggle svg {
-    stroke: currentColor;
     transition: transform 0.3s ease;
     display: block;
     margin: auto;
