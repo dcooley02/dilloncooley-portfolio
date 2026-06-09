@@ -24,7 +24,20 @@ body {
 /* Universal Spacing Reset */
 h1, h2, p {
     margin-top: 0;
-    margin-bottom: 15px; 
+    margin-bottom: 15px;
+}
+
+/* Hides content visually while keeping it available to screen readers */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 /* ==========================================
