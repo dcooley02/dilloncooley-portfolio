@@ -40,6 +40,28 @@ h1, h2, p {
     border: 0;
 }
 
+/* Archived-site notice */
+.archive-banner {
+    margin: 0 0 28px;
+    padding: 14px 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 168, 255, 0.45);
+    background: rgba(0, 168, 255, 0.12);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.archive-banner a {
+    border-bottom-color: rgba(0, 168, 255, 0.5);
+}
+
+.archive-sub {
+    margin: 6px 0 0;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.55);
+    font-weight: 400;
+}
+
 /* ==========================================
    2. TYPOGRAPHY & dividers
    ========================================== */
@@ -186,6 +208,16 @@ html.light-mode hr {
 
 html.light-mode .research-meta {
     color: rgba(26, 29, 46, 0.7);
+}
+
+html.light-mode .archive-banner {
+    border-color: rgba(0, 120, 200, 0.35);
+    background: rgba(0, 120, 200, 0.08);
+    color: #1a1d2e;
+}
+
+html.light-mode .archive-sub {
+    color: rgba(26, 29, 46, 0.55);
 }
 
 html.light-mode .connect-item {

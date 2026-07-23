@@ -1,15 +1,16 @@
-# Dillon Cooley — Personal Portfolio
+# Dillon Cooley — Personal Portfolio (archived)
 
-Personal portfolio site for [dilloncooley.us](https://dilloncooley.us). Built with plain HTML and CSS — no frameworks, no build tools.
+> **Archived.** This plain HTML/CSS site is no longer the live portfolio.
+>
+> **Current site:** [https://dilloncooley.us](https://dilloncooley.us)  
+> **Source:** [dcooley02/dilloncooley-win95](https://github.com/dcooley02/dilloncooley-win95) (Windows 95 desktop portfolio)
+>
+> A historical copy may still be viewable at  
+> [dcooley02.github.io/dilloncooley-portfolio](https://dcooley02.github.io/dilloncooley-portfolio/) (GitHub Pages only; no custom domain).
 
-## Features
+Built with plain HTML and CSS — no frameworks, no build tools. Kept for reference and history; not under active development.
 
-- Dark/light mode toggle with `localStorage` persistence and system preference detection (no flash on load)
-- Responsive layout that works on mobile and desktop
-- Inline PDF viewer for resume and thesis with a download fallback
-- Open Graph and Twitter Card meta tags for social sharing
-
-## Project Structure
+## Project structure
 
 ```
 /
@@ -19,18 +20,12 @@ Personal portfolio site for [dilloncooley.us](https://dilloncooley.us). Built wi
 │   ├── me.jpg
 │   └── helo.jpeg
 └── home/
-    ├── pdf-viewer.css      # Shared styles for PDF viewer pages
+    ├── pdf-viewer.css
     ├── resume/
-    │   ├── index.html      # Resume viewer
-    │   └── resume.pdf
     └── thesis/
-        ├── index.html      # Thesis viewer
-        └── thesis.pdf
 ```
 
-## Running Locally
-
-No build step required. Open `index.html` directly in a browser, or serve the directory with any static file server:
+## Running locally
 
 ```bash
 npx serve .
@@ -38,6 +33,11 @@ npx serve .
 python3 -m http.server
 ```
 
-## Deploying
+## Deploy / domain notes
 
-The site is a fully static, deploy anywhere — GitHub Pages, Netlify, Vercel, or any web host. No configuration needed beyond pointing the host at the repository root.
+- Custom domain `dilloncooley.us` is owned by **dilloncooley-win95** (this repo no longer ships a `CNAME`).
+- Prefer the live site for resume, thesis, and social previews.
+
+## GitHub archive
+
+Optional: in the repo **Settings → General → Danger Zone → Archive this repository** so GitHub marks the project read-only.

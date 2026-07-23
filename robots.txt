@@ -1,0 +1,3 @@
+# Archived static copy — live portfolio is https://dilloncooley.us
+User-agent: *
+Disallow: /
